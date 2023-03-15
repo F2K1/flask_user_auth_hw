@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Login</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Native SCSS -->
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/styles.css') }}">
+        <!-- Bootstrap 5 CDN -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    </head>
+
+    <body>
+        <div id="loginPageID" class="container-fluid">
+
+            <form method="post" action="{{ url_for('routeToLogin') }}">
+              <h1>Login</h1>
+
+              <div>
+                <label class="form-label">Username</label>
+                <input id="inputUsernameID" type="text" name="username" class="form-control">
+              </div>
+
+              <div>
+                <label class="form-label">Password</label>
+                <input id="inputPasswordID" type="password" name="password" class="form-control">
+              </div>
+              
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+        
+        <script src="" async defer></script>
+    </body>
+</html>

@@ -1,0 +1,21 @@
+body {
+  text-align: center;
+}
+
+#indexPageID {
+  margin: 9rem 0 5rem 0;
+}
+
+#loginPageID.container-fluid, #signinPageID.container-fluid {
+  text-align: left;
+}
+#loginPageID > form, #signinPageID > form {
+  margin: 0 38rem;
+}
+#loginPageID > form > div, #signinPageID > form > div {
+  margin: 2rem 0;
+}
+
+.navbar {
+  margin-bottom: 2rem;
+}/*# sourceMappingURL=styles.css.map */

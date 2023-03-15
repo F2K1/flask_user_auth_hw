@@ -1,0 +1,32 @@
+// Variables
+$size: 2rem;
+$size2: 38rem;
+
+// Tags
+body {
+    text-align: center;
+}
+
+
+// Classes & IDs
+#indexPageID {
+    margin: 9rem 0 5rem 0;
+}
+
+#loginPageID, #signinPageID {
+    &.container-fluid {
+        text-align: left;
+    }
+
+    &>form {
+        margin: 0 $size2;
+
+        &>div {
+            margin: $size 0;
+        }
+    }
+}
+
+.navbar {
+    margin-bottom: $size;
+}
