@@ -64,16 +64,14 @@ def routeToLogin():
         password = request.form["password"]
 
         db = connectDb()
-        user = db.execute('SELECT * FROM users WHERE username = ?', (username,)).fetchone()
+        user = db.execute('SELECT * FROM users WHERE username=?', (username,)).fetchone()
 
         if user == None:
             error = "User doesn't exist!"
             return redirect(url_for("routeToSignin"))
-            # return render_template("user_auth/login.html") error as variable
  
         elif password != user[5]:
             error = "Invalid Credentials!"
-            # return render_template("user_auth/login.html") error as variable
 
         else:
             session.clear()
@@ -83,7 +81,6 @@ def routeToLogin():
             
             elif user[6] == "customer":
                 return redirect(url_for("routeToProfile"))
-        print(username, error) #test
         
     return render_template("user_auth/login.html")
 
@@ -99,15 +96,11 @@ def routeToSignin():
         email = request.form["email"]
         password = request.form["password"]
 
-        print("AAA")
-
         db = connectDb()
         usernames_list = db.execute("SELECT username FROM users").fetchall()
 
-        print("BBB")    
         if username in usernames_list:
             error = "Username Taken! Please select another username."
-            print("CCC")
             return render_template("user_auth/signin.html", error=error)
         else:
             db.execute("INSERT INTO users(username, firstname, lastname, email, password, role) VALUES(?, ?, ?, ?, ?, 'customer')", (username, firstname, lastname, email, password))
