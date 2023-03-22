@@ -17,6 +17,7 @@
 
             <form method="post" action="{{ url_for('routeToSignin') }}">
               <h1>Signin</h1>
+              <h5 class="error">{{ error }}</h5>
 
               <div>
                 <label class="form-label">Username</label>
@@ -46,7 +47,6 @@
               <button type="submit" class="btn btn-primary">Submit</button>
             </form>
 
-            <h5>{{ error }}</h5>
         </div>
         
         <script src="" async defer></script>

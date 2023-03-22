@@ -16,6 +16,10 @@ body {
   margin: 2rem 0;
 }
 
+.error {
+  color: red;
+}
+
 .navbar {
   margin-bottom: 2rem;
 }/*# sourceMappingURL=styles.css.map */

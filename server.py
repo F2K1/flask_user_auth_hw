@@ -67,11 +67,12 @@ def routeToLogin():
         user = db.execute('SELECT * FROM users WHERE username=?', (username,)).fetchone()
 
         if user == None:
-            error = "User doesn't exist!"
-            return redirect(url_for("routeToSignin"))
+            error = "User does not exist! Please create an account."
+            return render_template("user_auth/signin.html", error=error)
  
         elif password != user[5]:
             error = "Invalid Credentials!"
+            return render_template("user_auth/login.html", error=error)
 
         else:
             session.clear()
